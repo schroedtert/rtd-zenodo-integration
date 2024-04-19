@@ -188,3 +188,4 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/python,venv
 
 rtd-zenodo-venv/
+docs/source/ZENODO.rst
