@@ -6,13 +6,13 @@ import warnings
 zenodo_path = pathlib.Path('docs/source/ZENODO.rst')
 
 
-search_query = "PedPy"
-version = "v1.0.2"
+search_query = "rtd-zenodo-integration"
+version = "v0.0.2"
 record_id = None
 
 try:
     response = requests.get(
-        "https://zenodo.org/api/records",
+        "https://sandbox.zenodo.org/api/records",
         params={"q": search_query, "all_versions": True, "sort": "mostrecent"},
     )
     data = response.json()
@@ -31,7 +31,7 @@ try:
 
     headers = {"accept": "application/x-bibtex"}
     response = requests.get(
-        f"https://zenodo.org/api/records/{record_id}", headers=headers
+        f"https://sandbox.zenodo.org/api/records/{record_id}", headers=headers
     )
     response.encoding = "utf-8"
 
